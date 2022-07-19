@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h2>Add new student</h2>
-                <!-- The success message -->
+                <!-- The add student success message -->
                 @if(Session::has('success'))
                 <div class="alert alert-success" role="alert">
                     <!-- Call the success message from the StudentController saveStudent function -->

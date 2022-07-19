@@ -5,7 +5,7 @@
             <div class="col-md-12">
                 <!-- To display the data -->
                 <h2>Edit student</h2>
-                 <!-- The success message -->
+                 <!-- The edit student success message -->
                  @if (Session::has('success'))
                     <div class="alert alert-success" role="alert">
                         <!-- Call the success message from the StudentContorller updateStudent function -->

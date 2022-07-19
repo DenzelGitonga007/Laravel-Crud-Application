@@ -6,6 +6,12 @@
             <div class="col-md-12">
                 <h2>Students List</h2>
                 <!-- To display the data -->
+                <!-- The delete success message -->
+                @if (Session::has('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{Session::get('success')}}
+                    </div>
+                @endif
                 <table class="table">
                     <thead>
                         <tr>
@@ -16,7 +22,7 @@
                             </a>
                             </div>
                             <!-- The actual display now -->
-                            <th>#</th>
+                            <th>Reg. No</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
@@ -41,8 +47,8 @@
                                     <a href="{{url('edit-student/'.$student->id)}}">
                                         <button class="btn btn-primary">Edit</button>
                                     </a>
-                                   
-                                    <button class="btn btn-danger">Delete</button>
+                                   <!-- A link for deleting the record(s) -->
+                                    <a href="{{url('delete-student/'.$student->id)}}" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                          <!-- End the loop    -->

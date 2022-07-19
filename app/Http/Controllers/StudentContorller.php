@@ -70,7 +70,8 @@ class StudentContorller extends Controller
         $address = $request->address;
 
         // Update query
-        Student::where('id', '=', '$id')->update([
+        Student::where('id', '=', $id)->update([
+            // 'id' => $id,
             'name' => $name,
             'email'=> $email,
             'phone' => $phone,
@@ -78,5 +79,10 @@ class StudentContorller extends Controller
         ]);
         // The success message
         return redirect()->back()->with('success', 'Student details successfully updated');
+    }
+    // Deleting the record(s)
+    public function deleteStudent($id) {
+        Student::where('id', '=', $id)->delete();
+        return redirect()->back()->with('success', 'Student deleted successfully');
     }
 }

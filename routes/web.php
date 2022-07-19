@@ -15,9 +15,11 @@ use App\Http\Controllers\StudentContorller;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// The index page to be the students' list
+Route::get('/', [StudentContorller::class, "index"]);
 
 // Calling the index function from the StudentController
 Route::get('student-list', [StudentContorller::class, "index"]);
@@ -32,3 +34,6 @@ Route::post('save-student', [StudentContorller::class, "saveStudent"]);
 Route::get('edit-student/{id}', [StudentContorller::class, "editStudent"]);
 // The post after the update
 Route::post('update-student', [StudentContorller::class, "updateStudent"]);
+
+// Deleting the records
+Route::get('delete-student/{id}', [StudentContorller::class, "deleteStudent"]);
